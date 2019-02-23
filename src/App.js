@@ -66,9 +66,9 @@ class Form extends Component {
               {/* <label for="first_name"></label> */}
               <select style={{display: "inline-block"}} onChange={this._onChangeDropDown}>
                 <option value="" disabled selected>Select Sequence</option>
-                <option value="Fire Emergency">Fire Emergency</option>
-                <option value="Flood Emergency">Flood Emergency</option>
-                <option value="Security Breach">Security Breach</option>
+                <option value="1">Fire Emergency</option>
+                <option value="2">Flood Emergency</option>
+                <option value="3">Security Breach</option>
               </select>
               
             </div>
