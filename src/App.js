@@ -7,10 +7,12 @@ class Form extends Component {
     super(props);
     this.state = {
       id: '',
-      path: ''
+      path: '',
+      option:''
     }
     this._onChangeInput = this._onChangeInput.bind(this)
     this._onChangeFile = this._onChangeFile.bind(this)
+    this._onChangeDropDown = this._onChangeDropDown.bind(this)
 
   }
 
@@ -18,8 +20,18 @@ class Form extends Component {
     this.setState({
       id: event.target.value
     })
-    console.log(this.state.id);
+    console.log(event.target.value);
+    // console.log(this.state.id);
   }
+
+  _onChangeDropDown(event) {
+    this.setState({
+      option: event.target.value
+    })
+    console.log(event.target.value);
+    // console.log(this.state.option);
+  }
+  
 
   // _onChangeFile(event){
   //   this.setState({
@@ -52,11 +64,11 @@ class Form extends Component {
             <label>Device ID:</label>
               <input placeholder="Enter device id.." id="first_name" type="text" class="validate" onChange={this._onChangeInput} />
               {/* <label for="first_name"></label> */}
-              <select style={{display: "inline-block"}}>
+              <select style={{display: "inline-block"}} onChange={this._onChangeDropDown}>
                 <option value="" disabled selected>Select Sequence</option>
-                <option value="1">Fire Emergency</option>
-                <option value="2">Flood Emergency</option>
-                <option value="3">Security Breach</option>
+                <option value="Fire Emergency">Fire Emergency</option>
+                <option value="Flood Emergency">Flood Emergency</option>
+                <option value="Security Breach">Security Breach</option>
               </select>
               
             </div>
